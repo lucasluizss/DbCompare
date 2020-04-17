@@ -1,0 +1,2 @@
+# DbCompare
+ 💾 Database compare application
