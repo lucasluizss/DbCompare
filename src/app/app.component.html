@@ -1,0 +1,47 @@
+<div class="uk-card uk-card-default uk-card-body">
+  <h3 class="uk-card-title">Database Compare 1.0</h3>
+
+  <div class="uk-grid-small" uk-grid>
+
+    <div class="uk-width-1-2@s">
+      <div class="uk-margin">
+        <label class="uk-form-label">Database:</label>
+        <select class="uk-select">
+          <option>Sql Server</option>
+          <option>MySql</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="uk-width-1-2@s">
+      <label class="uk-form-label">Number of comparisons:</label>
+      <input class="uk-input" type="number" placeholder="0" [(ngModel)]="totalComparisons" (focusout)="generateForm()">
+    </div>
+
+    <div *ngFor="let item of connectionList">
+      <div class="uk-grid-small" uk-grid>
+        <div class="uk-width-1-3@s">
+          <label class="uk-form-label">UserName:</label>
+          <input class="uk-input" type="text" placeholder="UserName" [(ngModel)]="item.UserName">
+        </div>
+
+        <div class="uk-width-1-3@s">
+          <label class="uk-form-label">Password:</label>
+          <input class="uk-input" type="password" placeholder="Password" [(ngModel)]="item.Password">
+        </div>
+
+        <div class="uk-width-1-3@s">
+          <label class="uk-form-label">Database:</label>
+          <input class="uk-input" type="text" placeholder="Database" [(ngModel)]="item.Database">
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <div class="uk-width-1-1@s">
+      <button class="uk-button uk-button-primary" (click)="execute()">Compare</button>
+    </div>
+
+  </div>
+
+</div>
