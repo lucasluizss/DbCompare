@@ -6,9 +6,9 @@
     <div class="uk-width-1-2@s">
       <div class="uk-margin">
         <label class="uk-form-label">Database:</label>
-        <select class="uk-select">
-          <option>Sql Server</option>
-          <option>MySql</option>
+        <select class="uk-select" [(ngModel)]="databaseType">
+          <option value="mysql" selected>MySql</option>
+          <option value="sql-server">Sql Server</option>
         </select>
       </div>
     </div>
@@ -18,7 +18,8 @@
       <input class="uk-input" type="number" placeholder="0" [(ngModel)]="totalComparisons" (focusout)="generateForm()">
     </div>
 
-    <div *ngFor="let item of connectionList">
+    <div *ngFor="let item of connectionList; let i = index">
+      <div>Comparison {{ i + 1 }}</div>
       <div class="uk-grid-small" uk-grid>
         <div class="uk-width-1-3@s">
           <label class="uk-form-label">UserName:</label>
@@ -39,7 +40,7 @@
     </div>
 
     <div class="uk-width-1-1@s">
-      <button class="uk-button uk-button-primary" (click)="execute()">Compare</button>
+      <button [disabled]="!totalComparisons" class="uk-button uk-button-primary" (click)="execute()">Compare</button>
     </div>
 
   </div>

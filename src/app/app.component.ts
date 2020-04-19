@@ -9,6 +9,7 @@ declare var UIkit: any;
 export class AppComponent {
   title = 'DbCompare';
 
+  public databaseType: string;
   public totalComparisons: number;
   public connectionList = new Array<DatabaseConnection>(0);
 
@@ -18,13 +19,14 @@ export class AppComponent {
       return;
     }
 
+    this.connectionList = new Array<DatabaseConnection>(0);
+
     for (let i = 0; i < this.totalComparisons; i++) {
       this.connectionList.push(new DatabaseConnection());
     }
   }
 
   public execute(): void {
-    console.log(this.connectionList);
     UIkit.modal.alert(`Total of comparisons: ${this.totalComparisons}`);
   }
 }
