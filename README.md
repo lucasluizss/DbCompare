@@ -1,6 +1,7 @@
 #  💾 DbCompare
 
 [![Build Status](https://dev.azure.com/lucasluizss/DbCompare/_apis/build/status/lucasluizss.DbCompare?branchName=master)](https://dev.azure.com/lucasluizss/DbCompare/_build/latest?definitionId=10&branchName=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e13fdbcd2a1f429284592394051b823f)](https://www.codacy.com/manual/lucasluizss/DbCompare?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lucasluizss/DbCompare&amp;utm_campaign=Badge_Grade)
 
 ## 👨🏽‍💻 Development server
 
