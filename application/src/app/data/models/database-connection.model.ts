@@ -1,5 +1,7 @@
 export class DatabaseConnection {
-	UserName: string;
+	Hostname: string;
+	Port: number;
+	Username: string;
 	Password: string;
 	Database: string;
 }

@@ -1,3 +1,6 @@
+import { OracleService } from './services/database-oracle.service.ts.service';
+import { SqlServerService } from './services/database-sqlserver.service';
+import { MySqlService } from './services/database-mysql.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,7 +17,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MySqlService,
+    SqlServerService,
+    OracleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
