@@ -1,28 +1,35 @@
-# DbCompare
+#  💾 DbCompare
 
 [![Build Status](https://dev.azure.com/lucasluizss/DbCompare/_apis/build/status/lucasluizss.DbCompare?branchName=master)](https://dev.azure.com/lucasluizss/DbCompare/_build/latest?definitionId=10&branchName=master)
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
-## Development server
+## 👨🏽‍💻 Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Run `npm start` for run directly in your desktop.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+## ⚙️ Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Run `npm run release` to generate a executable version for your computer.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🧾 Usage
 
-## Running end-to-end tests
+Working on that...
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## 🙋🏽‍♂️ Author
 
-## Further help
+Twitter: [@lucasluizss](https://twitter.com/lucasluizss)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Pay @lucasluizss Open PicPay on your phone and scan the code below:
+
+![alt text](https://github.com/lucasluizss/DbCompare/blob/master/site/images/picpay.png?raw=true)
+
+## 📝 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## ⚖️ License
+[MIT](https://choosealicense.com/licenses/mit/)
