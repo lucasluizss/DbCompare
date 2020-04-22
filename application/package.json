@@ -11,9 +11,11 @@
     ]
   },
   "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
     "restore": "npm install --suppess-warnings --loglevel=error",
-    "start": "electron .",
-    "dev": "ng serve",
+    "desktop": "electron .",
     "release": "electron-builder"
   },
   "private": true,
@@ -28,7 +30,7 @@
     "@angular/router": "~8.2.14",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "uikit": "^3.4.1",
+    "uikit": "^3.4.2",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
