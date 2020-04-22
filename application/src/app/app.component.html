@@ -1,11 +1,11 @@
 <div class="uk-card uk-card-default uk-card-body">
-  <h3 class="uk-card-title">💾 Database Compare 1.0</h3>
+  <h3 class="uk-card-title"><span uk-icon="database"></span> Database Compare 1.0</h3>
 
   <div class="uk-grid-small" uk-grid>
 
     <div class="uk-width-1-2@s">
       <div class="uk-margin">
-        <label class="uk-form-label">Database:</label>
+        <label class="uk-form-label">Database Type:</label>
         <select class="uk-select" [(ngModel)]="databaseType">
           <option [value]="0" selected>MySql</option>
           <option [value]="1">Sql Server</option>
@@ -22,7 +22,7 @@
     </div>
 
     <div *ngFor="let item of connectionList; let i = index">
-      <div>Comparison {{ i + 1 }}</div>
+      <div><span uk-icon="database"></span> Connection {{ i + 1 }}</div>
       <div class="uk-grid-small" uk-grid>
         <div class="uk-width-1-2@s">
           <label class="uk-form-label">Username:</label>

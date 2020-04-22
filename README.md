@@ -1,5 +1,6 @@
 # DbCompare
 
+[![Build Status](https://dev.azure.com/lucasluizss/DbCompare/_apis/build/status/lucasluizss.DbCompare?branchName=master)](https://dev.azure.com/lucasluizss/DbCompare/_build/latest?definitionId=10&branchName=master)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
 ## Development server
