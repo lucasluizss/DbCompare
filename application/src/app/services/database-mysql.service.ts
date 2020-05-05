@@ -1,3 +1,4 @@
+import { DatabaseConnection } from './../data/models/database-connection.model';
 import { EDatabaseType } from './../data/enums/database-type.enum';
 import { IDatabaseService } from './interfaces/database-service.interface';
 import { Injectable } from '@angular/core';
@@ -11,7 +12,13 @@ export class MySqlService implements IDatabaseService {
 
   constructor() { }
 
-  public execute(): any {
-		console.log(`executing ${this.code}`);
+  public execute(connectionList: DatabaseConnection[]): any {
+    console.log(`executing ${this.code}`);
+
+    for (const item of connectionList) {
+      console.log(item);
+    }
+
+    return [];
   }
 }

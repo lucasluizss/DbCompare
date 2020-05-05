@@ -40,13 +40,13 @@ export class AppComponent {
 
     switch (+this.databaseType) {
       case EDatabaseType.MySql:
-        this.mySqlService.execute();
+        this.mySqlService.execute(this.connectionList);
         break;
       case EDatabaseType.SqlServer:
-        this.sqlServerService.execute();
+        this.sqlServerService.execute(this.connectionList);
         break;
       case EDatabaseType.Oracle:
-        this.oracleService.execute();
+        this.oracleService.execute(this.connectionList);
         break;
     }
 

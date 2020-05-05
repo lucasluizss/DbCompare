@@ -1,6 +1,7 @@
+import { DatabaseConnection } from './../../data/models/database-connection.model';
 import { EDatabaseType } from './../../data/enums/database-type.enum';
 
 export interface IDatabaseService {
 	code: EDatabaseType;
-	execute(): any;
+	execute(connectionList: DatabaseConnection[]): any;
 }
