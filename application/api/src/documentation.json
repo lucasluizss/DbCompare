@@ -1,0 +1,117 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is an `API` with Node & TypeScript.",
+    "version": "1.0.0",
+    "title": "DbCompare.API",
+    "termsOfService": "https://github.com/lucasluizss/DbCompare.API/blob/master/LICENSE",
+    "contact": {
+      "email": "lucasluizss@live.com"
+    }
+  },
+  "host_prod": "dbcompare-api.herokuapp.com",
+  "host": "localhost:3000",
+  "basePath_notApply": "/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/compare": {
+      "post": {
+        "tags": [
+          "Compare"
+        ],
+        "summary": "Compare",
+        "description": "Compare",
+        "operationId": "Compare",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Compare",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CompareList"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/teste": {
+      "post": {
+        "tags": [
+          "teste"
+        ],
+        "summary": "teste",
+        "description": "teste",
+        "operationId": "teste",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Compare",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CompareList"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "CompareList": {
+      "type": "object",
+      "properties": {
+        "teste": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Compare"
+      }
+    },
+    "Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
