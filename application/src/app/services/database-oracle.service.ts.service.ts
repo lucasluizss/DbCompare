@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { DatabaseConnection } from './../data/models/database-connection.model';
 import { EDatabaseType } from './../data/enums/database-type.enum';
 import { IDatabaseService } from './interfaces/database-service.interface';
@@ -10,9 +12,9 @@ export class OracleService implements IDatabaseService {
 
   public code: EDatabaseType = EDatabaseType.Oracle;
 
-  constructor() { }
+  constructor(private readonly http: HttpClient) { }
 
-  public execute(connectionList: DatabaseConnection[]): any {
-    console.log(`executing ${this.code.toString()}`);
+  public execute(connectionList: DatabaseConnection[]): Observable<any> {
+    return this.http.post(``, connectionList);
   }
 }
