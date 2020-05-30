@@ -22,6 +22,7 @@ export class AppComponent {
   public databaseType: EDatabaseType;
   public totalComparisons: number;
   public connectionList = new Array<DatabaseConnection>(0);
+  public response: any;
 
   public generateForm(): void {
     if (!this.totalComparisons && this.totalComparisons < 2) {
@@ -36,17 +37,17 @@ export class AppComponent {
     }
   }
 
-  public execute(): void {
+  public async execute(): Promise<void> {
 
     switch (+this.databaseType) {
       case EDatabaseType.MySql:
-        this.mySqlService.execute(this.connectionList);
+        this.response = await this.mySqlService.execute(this.connectionList).toPromise();
         break;
       case EDatabaseType.SqlServer:
-        this.sqlServerService.execute(this.connectionList);
+        this.response = await this.sqlServerService.execute(this.connectionList).toPromise();
         break;
       case EDatabaseType.Oracle:
-        this.oracleService.execute(this.connectionList);
+        this.response = await this.oracleService.execute(this.connectionList).toPromise();
         break;
     }
 
