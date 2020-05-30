@@ -12,7 +12,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "(cd ./api && npm run start) & ng serve",
     "build": "ng build",
     "restore": "npm install --suppess-warnings --loglevel=error",
     "desktop": "electron .",
