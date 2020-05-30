@@ -6,7 +6,7 @@ class CompareService {
 	public execute(connections: Array<Connection>): any {
 		const response = new Array<any>();
 
-		for (let connection of connections) {
+		for (const connection of connections) {
 			response.push(CompareRepository.execute(connection));
 		}
 
