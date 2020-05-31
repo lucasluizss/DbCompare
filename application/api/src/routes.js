@@ -1,10 +1,8 @@
 import { Router } from 'express';
-import dbController from './controllers/compare.controller';
+import compareController from './controllers/compare.controller';
 
 const routes = Router();
 
-routes.post('/compare', dbController.compare);
-
-routes.post('/teste', dbController.teste);
+routes.post('/compare', compareController.compare);
 
 export default routes;

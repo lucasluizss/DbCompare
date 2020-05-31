@@ -1,17 +1,15 @@
 import { Request, Response } from 'express';
 import CompareService from '../services/compare.service';
 
-class DbController {
+class CompareController {
 
 	constructor() { }
 
 	public async compare(request: Request, response: Response): Promise<Response> {
-		return response.json(CompareService.execute());
-	}
+		const  { connections } = request.body;
 
-	public async teste(request: Request, response: Response): Promise<Response> {
-		return response.json(CompareService.execute());
+		return response.json(CompareService.execute(connections));
 	}
 }
 
-export default new DbController();
+export default new CompareController();
