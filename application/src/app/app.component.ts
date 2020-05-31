@@ -11,7 +11,7 @@ declare var UIkit: any;
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'DbCompare';
+  public title = 'DbCompare';
 
   constructor(
     private mySqlService: MySqlService,

@@ -14,13 +14,14 @@ class CompareRepository {
 		ORDER BY t.TABLE_NAME;
 	`;
 
-	execute({ host, user, password, database }: Connection): any {
+	execute({ host, port, user, password, database }: Connection): any {
 		let response: any;
-		const connection = mysql.createConnection({ host, user, password, database });
+		const connection = mysql.createConnection({ host: `${host}:${port}`, user, password, database });
 		connection.connect();
 
 		connection.query(this.defaultQuery(database), (error: any, results: any, fields: any) => {
 			if (error) {
+				console.error(`==> Erro: ${error}`)
 				throw error;
 			}
 

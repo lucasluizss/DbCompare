@@ -3,7 +3,7 @@ import CompareRepository from '../data/compare.repository'
 
 class CompareService {
 
-	public execute(connections: Array<Connection>): any {
+	public execute(connections: Array<Connection>, dbType: any = null): any {
 		const response = new Array<any>();
 
 		for (const connection of connections) {

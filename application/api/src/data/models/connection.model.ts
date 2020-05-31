@@ -1,6 +1,6 @@
 export class Connection {
 	host: string;
-	Port: number;
+	port: number;
 	user: string;
 	password: string;
 	database: string;
