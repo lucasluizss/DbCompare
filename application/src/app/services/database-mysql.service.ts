@@ -15,6 +15,6 @@ export class MySqlService implements IDatabaseService {
   constructor(private readonly http: HttpClient) { }
 
   public execute(connectionList: DatabaseConnection[]): Observable<any> {
-    return this.http.post(``, connectionList);
+    return this.http.post(`/compare`, connectionList);
   }
 }
