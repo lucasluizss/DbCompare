@@ -1,9 +1,11 @@
+import { IDatabaseService } from './services/interfaces/database-service.interface';
 import { EDatabaseType } from './data/enums/database-type.enum';
 import { OracleService } from './services/database-oracle.service.ts.service';
 import { MySqlService } from './services/database-mysql.service';
 import { SqlServerService } from './services/database-sqlserver.service';
 import { DatabaseConnection } from './data/models/database-connection.model';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 declare var UIkit: any;
 
 @Component({
@@ -12,12 +14,19 @@ declare var UIkit: any;
 })
 export class AppComponent {
   public title = 'DbCompare';
+  private commands: any;
 
   constructor(
-    private mySqlService: MySqlService,
-    private sqlServerService: SqlServerService,
-    private oracleService: OracleService
-  ) { }
+    private readonly mySqlService: MySqlService,
+    private readonly sqlServerService: SqlServerService,
+    private readonly oracleService: OracleService
+  ) {
+    this.commands = [
+      { Key: EDatabaseType.MySql, Value: (x: any) => mySqlService.execute(x) },
+      { Key: EDatabaseType.SqlServer, Value: (x: any) => mySqlService.execute(x) },
+      { Key: EDatabaseType.Oracle, Value: (x: any) => mySqlService.execute(x) },
+    ];
+  }
 
   public databaseType: EDatabaseType;
   public totalComparisons: number;
@@ -39,18 +48,13 @@ export class AppComponent {
 
   public async execute(): Promise<void> {
 
-    switch (+this.databaseType) {
-      case EDatabaseType.MySql:
-        this.response = await this.mySqlService.execute(this.connectionList).toPromise();
-        break;
-      case EDatabaseType.SqlServer:
-        this.response = await this.sqlServerService.execute(this.connectionList).toPromise();
-        break;
-      case EDatabaseType.Oracle:
-        this.response = await this.oracleService.execute(this.connectionList).toPromise();
-        break;
-    }
+    this.response = await this.Invoke(+this.databaseType).toPromise();
 
     UIkit.modal.alert(`Total of comparisons: ${this.totalComparisons}\n${JSON.stringify(this.connectionList)}`);
   }
+
+  private Invoke(dbType: EDatabaseType): Observable<any> {
+    return (this.commands.find(c => c.Key === dbType).Value)(this.connectionList);
+  }
+
 }
