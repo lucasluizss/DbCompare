@@ -1,4 +1,3 @@
-import { IDatabaseService } from './services/interfaces/database-service.interface';
 import { EDatabaseType } from './data/enums/database-type.enum';
 import { OracleService } from './services/database-oracle.service.ts.service';
 import { MySqlService } from './services/database-mysql.service';
@@ -48,6 +47,8 @@ export class AppComponent {
 
   public async execute(): Promise<void> {
     this.response = await this.Invoke(+this.databaseType).toPromise();
+
+    console.log('Response: ', this.response);
 
     UIkit.modal.alert(`Total of comparisons: ${this.totalComparisons}\n${JSON.stringify(this.connectionList)}`);
   }

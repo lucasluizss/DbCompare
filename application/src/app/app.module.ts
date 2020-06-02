@@ -1,3 +1,4 @@
+import { Interceptor } from './core/http.interceptor';
 import { OracleService } from './services/database-oracle.service.ts.service';
 import { SqlServerService } from './services/database-sqlserver.service';
 import { MySqlService } from './services/database-mysql.service';
@@ -7,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,12 @@ import { FormsModule } from '@angular/forms';
   providers: [
     MySqlService,
     SqlServerService,
-    OracleService
+    OracleService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

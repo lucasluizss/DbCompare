@@ -12,9 +12,7 @@ export class Interceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const clonedRequest = request.clone({
-      setHeaders: {
-        url: environment.api
-      }
+      url: `${environment.api}${request.url}`
     });
 
     return next.handle(clonedRequest);

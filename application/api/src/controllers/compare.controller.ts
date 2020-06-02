@@ -5,6 +5,10 @@ class CompareController {
 
 	constructor() { }
 
+	public async Index(request: Request, response: Response): Promise<Response> {
+		return response.send('Service is running...');
+	}
+
 	public async Compare(request: Request, response: Response): Promise<Response> {
 		const  { dbType, connections } = request.body;
 
@@ -12,7 +16,8 @@ class CompareController {
 	}
 
 	public async CompareMysql(request: Request, response: Response): Promise<Response> {
-		const  { connections } = request.body;
+		console.log('==> Comparando MySql...', request.body);
+		const connections = request.body;
 
 		return response.json(CompareService.execute(connections));
 	}
