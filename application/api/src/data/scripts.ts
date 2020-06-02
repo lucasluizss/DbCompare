@@ -1,0 +1,15 @@
+class Scripts {
+	static Query = (database: string) => `
+		SELECT
+			T.TABLE_NAME,
+			C.COLUMN_NAME,
+			c.DATA_TYPE
+		FROM INFORMATION_SCHEMA.TABLES T
+			INNER JOIN INFORMATION_SCHEMA.COLUMNS C ON C.TABLE_NAME = T.TABLE_NAME
+		WHERE
+			T.TABLE_TYPE = 'BASE TABLE' AND T.TABLE_SCHEMA = ${database}
+		ORDER BY t.TABLE_NAME;
+	`;
+}
+
+export default Scripts;

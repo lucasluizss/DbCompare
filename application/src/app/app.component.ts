@@ -23,8 +23,8 @@ export class AppComponent {
   ) {
     this.commands = [
       { Key: EDatabaseType.MySql, Value: (x: any) => mySqlService.execute(x) },
-      { Key: EDatabaseType.SqlServer, Value: (x: any) => mySqlService.execute(x) },
-      { Key: EDatabaseType.Oracle, Value: (x: any) => mySqlService.execute(x) },
+      { Key: EDatabaseType.SqlServer, Value: (x: any) => sqlServerService.execute(x) },
+      { Key: EDatabaseType.Oracle, Value: (x: any) => oracleService.execute(x) },
     ];
   }
 
@@ -47,7 +47,6 @@ export class AppComponent {
   }
 
   public async execute(): Promise<void> {
-
     this.response = await this.Invoke(+this.databaseType).toPromise();
 
     UIkit.modal.alert(`Total of comparisons: ${this.totalComparisons}\n${JSON.stringify(this.connectionList)}`);
